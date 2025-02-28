@@ -4,13 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "concurrently \"npm run dev\" \"npm run backend\" \"npm run client\"",
     "dev": "vite",
+    "backend": "cd ../spotify-backend && npm run start",
+    "client": "cd ../spotify-frontend && npm run dev",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.7.2",
+    "concurrently": "^9.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1",
